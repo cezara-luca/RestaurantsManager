@@ -15,7 +15,11 @@ const storage = multer.diskStorage({
 
 const fileFilter = (req, file, cb) => {
   // reject a file
-  if (file.mimetype === "image/jpeg" || file.mimetype === "image/png" || file.mimetype === "image/jpg") {
+  if (
+    file.mimetype === "image/jpeg" ||
+    file.mimetype === "image/png" ||
+    file.mimetype === "image/jpg"
+  ) {
     cb(null, true);
   } else {
     cb(null, false);
@@ -27,7 +31,7 @@ const upload = multer({
   limits: {
     fileSize: 1024 * 1024 * 5,
   },
-  fileFilter: fileFilter
+  fileFilter: fileFilter,
 }); //relative path
 
 const Product = require("../models/product");
@@ -58,14 +62,8 @@ router.get("/", (req, res, next) => {
           };
         }),
       };
-      // console.log(docs);
-      // if (docs.length >= 0) {
+
       res.status(200).json(response);
-      // } else {
-      //   res.status(404).json({
-      //     message: "No entries found.",
-      //   });
-      // }
     })
     .catch((err) => {
       console.log(err);
@@ -76,12 +74,8 @@ router.get("/", (req, res, next) => {
 });
 
 router.post("/", upload.single("image"), (req, res, next) => {
-  console.log(req.body)
-  //   const product = {
-  //     name: req.body.name,
-  //     price: req.body.price,
-  //   };
-  // console.log(req.file);
+  console.log(req.body);
+
   const product = new Product({
     _id: new mongoose.Types.ObjectId(),
     name: req.body.name,
@@ -92,7 +86,7 @@ router.post("/", upload.single("image"), (req, res, next) => {
     wifi: req.body.wifi,
     petFriendly: req.body.petFriendly,
     cardPayment: req.body.cardPayment,
-    terrace: req.body.terrace
+    terrace: req.body.terrace,
   });
 
   product
@@ -127,7 +121,7 @@ router.post("/", upload.single("image"), (req, res, next) => {
 router.get("/:productId", (req, res, next) => {
   const id = req.params.productId;
   Product.findById(id)
-  // .select('name price adress phone image _id')
+    // .select('name price adress phone image _id')
     .exec()
     .then((doc) => {
       console.log(doc);
@@ -146,9 +140,6 @@ router.get("/:productId", (req, res, next) => {
 });
 
 router.patch("/:productId", (req, res, next) => {
-  // res.status(200).json({
-  //   message: "Updated product!",
-  // });
   const id = req.params.productId;
   const updateOps = {};
 

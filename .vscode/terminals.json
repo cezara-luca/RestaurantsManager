@@ -19,6 +19,15 @@
             "recycle": true,
             "open": true,
             "focus": false
+        },
+        {
+            "name": "Login",
+            "cwd": "./node_passport_login",
+            "commands": ["npm run start"],
+            "execute": true,
+            "recycle": true,
+            "open": true,
+            "focus": false
         }
     ]
 }

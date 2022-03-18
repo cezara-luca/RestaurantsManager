@@ -133,8 +133,6 @@ export class RestaurantsComponent implements OnInit {
     this.service.getRestaurants().subscribe((result) => {
       this._restaurants = result.products;
       this.restaurants = this.applyFilters(this._restaurants);
-      // console.log(this.restaurants);
-      // console.log('plm: ' + this.restaurants)
     });
   }
 
@@ -202,5 +200,5 @@ export class RestaurantsComponent implements OnInit {
     return data;
   }
 
-  
+
 }
