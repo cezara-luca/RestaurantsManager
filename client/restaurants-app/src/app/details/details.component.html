@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <h1><b>{{ restaurant.name }}</b></h1>
+  <!-- <h2>{{ restaurant.price }}</h2> -->
+  <img src="http://localhost:3000/{{ restaurant.image }}" />
+  <div class="restaurant-features-wrapper">
+    <h2><b>What this place offers</b></h2>
+    <div *ngIf="restaurant.wifi" [ngClass]="{'restaurant-feature-missing' : restaurant.wifi === 'no'}" class="restaurant-features-single"><mat-icon>wifi</mat-icon><h3>WiFi</h3></div>
+    <div *ngIf="restaurant.petFriendly"[ngClass]="{'restaurant-feature-missing' : restaurant.petFriendly === 'no'}" class="restaurant-features-single"><mat-icon>pets</mat-icon><h3>Pet Friendly interior</h3></div>
+    <div *ngIf="restaurant.cardPayment" [ngClass]="{'restaurant-feature-missing' : restaurant.cardPayment === 'no'}" class="restaurant-features-single"><mat-icon>credit_card</mat-icon><h3>Card Payment avaliable</h3></div>
+    <div *ngIf="restaurant.terrace" [ngClass]="{'restaurant-feature-missing' : restaurant.terrace === 'no'}" class="restaurant-features-single"><mat-icon>wb_sunny</mat-icon><h3>Outdoor Terrace</h3></div>
+  </div>
+  <h2><b>Program:</b></h2>
+  <h3>{{ restaurant.price }}</h3>
+  <mat-divider></mat-divider>
+  <br/>
+  <h2><b>Adress:</b></h2>
+  <h3>{{ restaurant.adress }}</h3>
+  <mat-divider></mat-divider>
+  <br/>
+  <h2><b>Contact:</b></h2>
+  <h3>0{{ restaurant.phone }}</h3>
+  <mat-divider></mat-divider>
+  <br/>
+
+  <input type="text" [(ngModel)]="name">
+  <p>WELCOME {{ name }}</p>
+</div>
+ 

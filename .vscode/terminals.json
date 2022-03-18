@@ -1,0 +1,24 @@
+{
+    "autorun": true,
+    "autokill": true,
+    "terminals": [
+        {
+            "name": "Frontend",
+            "cwd": "./client/restaurants-app",
+            "commands": ["ng serve"],
+            "execute": true,
+            "recycle": true,
+            "open": true,
+            "focus": true
+        },
+        {
+            "name": "Backend",
+            "cwd": "./api",
+            "commands": ["npm run start"],
+            "execute": true,
+            "recycle": true,
+            "open": true,
+            "focus": false
+        }
+    ]
+}

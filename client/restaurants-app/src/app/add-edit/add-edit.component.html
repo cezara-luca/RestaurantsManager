@@ -1,0 +1,64 @@
+<div class="d-flex flex-row bd-highlight mb-3">
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Restaurant Name</label>
+      <div class="col-sm-10 mb-3">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="name"
+          placeholder="Enter Restaurant name"
+        />
+      </div>
+
+      <label class="col-sm-2 col-form-label">WiFi Info</label>
+      <div class="col-sm-10 mb-3">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="wifi"
+          placeholder="WiFi info"
+        />
+      </div>
+
+      <label class="col-sm-2 col-form-label">Card Payment</label>
+      <div class="col-sm-10 mb-3">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="cardPayment"
+          placeholder="Card payment available?"
+        />
+      </div>
+
+      <label class="col-sm-2 col-form-label">Pet Friendly</label>
+      <div class="col-sm-10 mb-3">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="petFriendly"
+          placeholder="Pet friendly?"
+        />
+      </div>
+
+      <label class="col-sm-2 col-form-label">Terrace</label>
+      <div class="col-sm-10 mb-3">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="terrace"
+          placeholder="Do they have a terrace?"
+        />
+      </div>
+    </div>
+    <button type="submit" class="btn btn-warning">Add new restaurant</button>
+
+    <!-- <button
+      (click)="updateRestaurant()"
+      *ngIf="emp.RestaurantId != 0"
+      class="btn btn-success"
+    >
+      Update
+    </button> -->
+  </form>
+</div>

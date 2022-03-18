@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    build: ./client/restaurants-app
+    ports:
+    - "80:80"
+    links:
+    - node
+    volumes:
+    - "C:/Users/cezara.luca/Documents/estaurantsApp/node-rest-app/client/restaurants-app/dist:/usr/share/nginx/html"
+  node:
+    build: ./api
+    ports:
+      - "3000:3000" 
