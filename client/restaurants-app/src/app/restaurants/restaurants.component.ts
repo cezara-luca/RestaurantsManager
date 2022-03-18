@@ -68,26 +68,28 @@ export class RestaurantsComponent implements OnInit {
     };
     this.getRes();
 
-    console.log(window.innerWidth)
-    if (window.innerWidth < 768) {
-      this.sidenav.fixedTopGap = 55;
-      this.opened = false;
-    } else {
-      this.sidenav.fixedTopGap = 55;
-      this.opened = true;
-    }
+
+    // commented code for previous existing side menu
+    // console.log(window.innerWidth)
+    // if (window.innerWidth < 768) {
+    //   this.sidenav.fixedTopGap = 55;
+    //   this.opened = false;
+    // } else {
+    //   this.sidenav.fixedTopGap = 55;
+    //   this.opened = true;
+    // }
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    if (event.target.innerWidth < 768) {
-      this.sidenav.fixedTopGap = 55;
-      this.opened = false;
-    } else {
-      this.sidenav.fixedTopGap = 55
-      this.opened = true;
-    }
-  }
+  // @HostListener('window:resize', ['$event'])
+  // onResize(event: any) {
+  //   if (event.target.innerWidth < 768) {
+  //     this.sidenav.fixedTopGap = 55;
+  //     this.opened = false;
+  //   } else {
+  //     this.sidenav.fixedTopGap = 55
+  //     this.opened = true;
+  //   }
+  // }
 
   isBiggerScreen() {
     const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
