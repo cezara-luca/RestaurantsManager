@@ -10,16 +10,19 @@ If opening with VSCode, the terminals will run automatically.
 
 If starting manually:
 
-FRONTEND:   cd client/restaurants-app  
+FRONTEND:  
+cd client/restaurants-app  
             npm i  
             ng serve
 
-BACKEND:    cd api__
-            npm i__
+BACKEND:  
+cd api  
+            npm i 
             npm run start
 
-LOGIN       cd  node_passport_login__
-            npm i__
+LOGIN:  
+cd  node_passport_login  
+            npm i  
             npm run start
 
 ## Usage
